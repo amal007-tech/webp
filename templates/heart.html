@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Health Guard</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .text-center {
+            margin-bottom: 50px;
+            font-weight: bold;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .body {
+            color: white;
+        }
+
+        .form-control {
+            border-width: 2px;
+            border-color: black;
+        }
+
+        label {
+            font-family: Poppins;
+            font-weight: 600;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <section id="disease-prediction-section" class="hidden">
+        <div class="container">
+            <h2 class="text-center">Heart Disease Prediction</h2>
+            <form id="disease-prediction-form" class="row g-2 justify-content-center" action="\calculate" method="POST">
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="age">Age:</label>
+                        <input type="text" id="age" name="age" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="sex">Sex:</label>
+                        <input type="text" id="sex" name="sex" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="cp">Chest Pain Type(cp):</label>
+                        <input type="text" id="cp" name="cp" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="trestbps">Resting Blood Pressure (trestbps):</label>
+                        <input type="text" id="trestbps" name="trestbps" class="form-control" required>
+                    </div>
+                    
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="form-group mb-3">
+                        <label for="cholesterol">Cholesterol (chol):</label>
+                        <input type="text" id="cholesterol" name="cholesterol" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="fbs">Fasting Blood Sugar (fbs):</label>
+                        <input type="text" id="fbs" name="fbs" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="restecg">Resting Electrocardiographic Results(restecg):</label>
+                        <input type="text" id="restecg" name="restecg" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="thalach">Maximum Heart Rate Achieved(thalach):</label>
+                        <input type="text" id="thalach" name="thalach" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="form-group mb-3">
+                        <label for="exang">Exercise Induced Angina(exang):</label>
+                        <input type="text" id="exang" name="exang" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="oldpeak">ST Depression Induced by Exercise(oldpeak):</label>
+                        <input type="text" id="oldpeak" name="oldpeak" step="0.1" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="slope">Slope of the Peak Exercise ST Segment(slope):</label>
+                        <input type="text" id="slope" name="slope" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="ca">Number of Major Vessels(ca):</label>
+                        <input type="text" id="ca" name="ca" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="thal">Thalassemia:</label>
+                      <input type="text" id="thal" name="thal" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary">Predict</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <br>
+    <center>
+        <en>{{ predict }}</en>
+    </center>
+    <br>
+</body>
+</html>
